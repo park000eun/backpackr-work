@@ -2,9 +2,9 @@
 import Image from 'next/image';
 
 import type { UnitGiftItem } from '@/src/types';
-import Price from '../common/Price';
+import Price from '../../common/Price';
 
-const HandmadeItem = ({ handmadeItem }: { handmadeItem: UnitGiftItem }) => {
+const GiftItem = ({ handmadeItem }: { handmadeItem: UnitGiftItem }) => {
   const { thumbImageUrl, name, saleRate, priceSale } = handmadeItem;
   return (
     <button onClick={() => alert(`작품 상세 페이지로 이동 - ${name}`)}>
@@ -21,4 +21,4 @@ const HandmadeItem = ({ handmadeItem }: { handmadeItem: UnitGiftItem }) => {
   );
 };
 
-export default HandmadeItem;
+export default GiftItem;

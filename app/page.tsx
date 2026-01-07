@@ -1,7 +1,4 @@
 import Image from 'next/image';
-import unitGiftData from '../src/server/data/unit-gift.json';
-import unitReviewData from '../src/server/data/unit-review.json';
-import unitShortcutData from '../src/server/data/unit-shortcut.json';
 import page1Data from '../src/server/data/page1.json';
 import page2Data from '../src/server/data/page2.json';
 import page3Data from '../src/server/data/page3.json';
@@ -9,13 +6,12 @@ import ProductThumbImage from '@/src/components/common/ProductThumbImage';
 import { BADGE_DISPLAY_TYPES, PageItem, UnitGift, UnitGiftItem, UnitShortcutItem } from '@/src/types';
 
 import ProductInfo from '@/src/components/common/ProductInfo';
-import ShortcutList from '@/src/components/shortcut/ShortcutList';
-import HandmadeList from '@/src/components/handmade/HandmadeList';
+import ShortcutList from '@/src/components/units/shortcut/ShortcutList';
+import GiftList from '@/src/components/units/gift/GiftList';
+import ReviewList from '@/src/components/units/review/ReviewList';
 
 const Home = () => {
   // 각 데이터의 items 배열에서 처음 2개만 가져오기
-  const unitReviewProducts = unitReviewData.products.slice(0, 2);
-  const shortcutData = unitShortcutData.items as UnitShortcutItem[];
   const page1Items = page1Data.items.slice(0, 2) as PageItem[];
 
   return (
@@ -49,12 +45,9 @@ const Home = () => {
           </div>
         </section>
 
-        {/* 어떤 선물을 하나요? */}
-        <ShortcutList shortcutData={shortcutData as UnitShortcutItem[]} />
-
-        {/* 정성 가득한 핸드메이드 선물 */}
-        <HandmadeList handmadeData={unitGiftData as UnitGift} />
-
+        <ShortcutList />
+        <GiftList />
+        <ReviewList />
         {/* <section className="mb-12">
           <h2 className="mb-4 text-2xl font-semibold text-black dark:text-zinc-50">
             {unitReviewData.title.map((span, idx) => (

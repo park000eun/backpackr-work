@@ -4,6 +4,7 @@ import Badge from '@/src/components/common/Badge';
 import Price from '@/src/components/common/Price';
 import Rating from '@/src/components/common/Rating';
 import adIcon from '@/src/assets/icon/ad.png';
+import ArtistName from './Text/ArtistName';
 
 interface ProductInfoProps {
   isAdBadge: boolean;
@@ -19,7 +20,7 @@ const ProductInfo = ({ isAdBadge, name, badges, artistName, salePrice, discountR
   return (
     <div className="flex flex-col gap-1 px-1 pt-3">
       <div className="flex justify-between items-center">
-        <span className="text-xs text-gray-400 truncate flex-1">{artistName}</span>
+        <ArtistName artistName={artistName} />
         {isAdBadge && <Image src={adIcon} alt="AD" width={16} height={16} />}
       </div>
 

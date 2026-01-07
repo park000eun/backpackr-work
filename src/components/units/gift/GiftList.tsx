@@ -1,11 +1,13 @@
 import Image from 'next/image';
 
-import type { UnitGift, UnitGiftItem } from '@/src/types';
+import handmadeData from '@/src/server/data/unit-gift.json';
+import type { TextStyleType, UnitGiftItem } from '@/src/types';
+
 import { TEXT_STYLES } from '@/src/types';
 
-import HandmadeItem from './HandmadeItem';
+import GiftItem from './GIftItem';
 
-const HandmadeList = ({ handmadeData }: { handmadeData: UnitGift }) => {
+const GiftList = () => {
   const { icon, title, themeTitle, items } = handmadeData;
 
   return (
@@ -18,25 +20,25 @@ const HandmadeList = ({ handmadeData }: { handmadeData: UnitGift }) => {
               key={ele.text}
               style={{
                 fontSize: `${ele.size}px`,
-                color: ele.color,
+                color: ele.colorWeb,
                 backgroundColor: ele.bgColorWeb || undefined,
-                ...TEXT_STYLES[ele.types[0]],
+                ...TEXT_STYLES[ele.types[0] as TextStyleType],
               }}
             >
               {ele.text}
             </span>
           ))}
         </div>
-        <h1 className="text-lg font-extrabold text-gray-600 pl-1">{themeTitle}</h1>
+        <h1 className="text-lg font-extrabold text-gray-700 pl-1">{themeTitle}</h1>
       </div>
 
       <div className="grid gap-x-3 gap-y-4 grid-cols-3">
         {items.map((item: UnitGiftItem) => (
-          <HandmadeItem key={item.name} handmadeItem={item} />
+          <GiftItem key={item.name} handmadeItem={item} />
         ))}
       </div>
     </section>
   );
 };
 
-export default HandmadeList;
+export default GiftList;
