@@ -2,7 +2,7 @@
   "items": [
     {
       "uuid": "111e45ea-68d9-4b63-8aab-8fe425c7a424",
-      "name": "🥇미셰린 셰프의 선택🥇 통째로 갈아만든 생과일 세트",
+      "name": "🥇미셰린 셰프의 선택🥇 통째로 갈아만든 생과일 세트 통째로 갈아만든 생과일 세트통째로 갈아만든 생과일 세트통째로 갈아만든 생과일 세트",
       "image": "https://image.idus.com/image/files/c6935d54ad4e40a3939745213ad1aee8_400.jpg",
       "artistUuid": "80db54b5-4dcc-4c9c-b277-251331b429e8",
       "artistName": "청숨",
@@ -15,25 +15,17 @@
         "contents": "구입한지 얼마되지 않았는데 벌써 절반이상 먹었습니다ㅎㅎ 제형이 생강물에 가까워서 생강차로 타먹었는데 이번 감기에 큰 도움이 됐어요. 집에 있는 모과차와 섞어 먹으니 적당히 달고 쌉쌀해서 생강을 즐기지 않는 가족도 잘 마시더라고요.",
         "starFull": true
       },
-      "badges": [
-        {
-          "displayType": "RECTANGLE",
-          "label": "살수록할인",
-          "colorFont": "#5f77a4ff",
-          "colorBackground": "#f5f7ffff",
-          "image": null
-        },
-        {
-          "displayType": "RECTANGLE",
-          "label": "쿠폰",
-          "colorFont": "#ff4b50ff",
-          "colorBackground": "#fff2f4ff",
-          "image": null
-        }
-      ],
+      "badges": [],
       "promotion": {
-        "colorBackground": "#00000099",
-        "labels": []
+        "colorBackground": "#009ee7ff",
+        "labels": [
+          {
+            "types": ["BOLD"],
+            "text": "설 특가",
+            "colorFont": "#fffce3ff",
+            "size": 11
+          }
+        ]
       },
       "isAdBadgeVisible": true,
       "artistId": 6148115
