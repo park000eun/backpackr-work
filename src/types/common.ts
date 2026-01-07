@@ -1,9 +1,17 @@
-export type BadgeDisplayType = 'RECTANGLE' | 'REPURCHASE' | 'NEW';
-export type TextType = 'BOLD' | 'ITALIC' | 'UNDERLINE';
+export const TEXT_STYLES = {
+  BOLD: { fontWeight: 'bold' },
+} as const;
+export type TextStyleType = keyof typeof TEXT_STYLES;
+
+export const BADGE_DISPLAY_TYPES = {
+  RECTANGLE: { fontWeight: 'normal' },
+  REPURCHASE: { fontWeight: 'normal' },
+} as const;
+export type BadgeDisplayType = keyof typeof BADGE_DISPLAY_TYPES;
 
 export interface UnitTitle {
   text: string;
-  types: TextType[];
+  types: TextStyleType[];
   size: number;
   color: string;
   colorWeb: string;
@@ -28,7 +36,7 @@ export interface Badge {
 }
 
 export interface PromotionLabel {
-  types: TextType[];
+  types: TextStyleType[];
   text: string;
   colorFont: string;
   size: number;
