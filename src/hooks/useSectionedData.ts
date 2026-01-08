@@ -12,7 +12,7 @@ const useSectionedData = (allProducts: Product[]): DataSection[] => {
   return useMemo(() => {
     const sections: DataSection[] = [];
 
-    // 1~2번째 줄 이후 ShortcutList
+    // 2번째 줄 이후 ShortcutList
     if (allProducts.length > 0) {
       sections.push({
         products: allProducts.slice(0, ITEMS_PER_2_ROWS),
@@ -20,7 +20,7 @@ const useSectionedData = (allProducts: Product[]): DataSection[] => {
       });
     }
 
-    // 3-4번째 줄 이후 GiftList
+    // 4번째 줄 이후 GiftList
     if (allProducts.length > ITEMS_PER_2_ROWS) {
       sections.push({
         products: allProducts.slice(ITEMS_PER_2_ROWS, ITEMS_PER_2_ROWS * 2),
@@ -28,7 +28,7 @@ const useSectionedData = (allProducts: Product[]): DataSection[] => {
       });
     }
 
-    // 5-6번째 줄 이후 ReviewList
+    // 6번째 줄 이후 ReviewList
     if (allProducts.length > ITEMS_PER_2_ROWS * 2) {
       sections.push({
         products: allProducts.slice(ITEMS_PER_2_ROWS * 2, ITEMS_PER_2_ROWS * 3),
