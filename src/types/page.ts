@@ -1,6 +1,6 @@
 import { Review, Badge, Promotion, Pagination } from './common';
 
-export interface PageItem {
+export interface Product {
   uuid: string;
   name: string;
   image: string;
@@ -15,7 +15,7 @@ export interface PageItem {
   artistId: number;
 }
 
-export interface PageData {
-  items: PageItem[];
+export interface ProductListResponse {
+  items: Product[];
   pagination: Pagination;
 }

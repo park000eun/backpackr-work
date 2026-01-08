@@ -16,5 +16,5 @@ export interface UnitGift {
   targetId: string;
   title: UnitTitle[];
   themeTitle: string;
-  items: UnitGiftItem[];
+  items: UnitGiftProduct[];
 }

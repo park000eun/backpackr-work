@@ -7,5 +7,5 @@ export interface UnitShortcutItem {
 
 export interface UnitShortcut {
   title: string;
-  items: UnitShortcutItem[];
+  items: UnitShortcutProduct[];
 }
