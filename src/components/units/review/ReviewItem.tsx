@@ -1,12 +1,9 @@
 'use client';
 import Image from 'next/image';
 
-import { TEXT_STYLES, type TextStyleType, type UnitReviewProduct } from '@/src/types';
-import Price from '../../common/Price';
-import ArtistName from '../../common/Text/ArtistName';
-import Rating from '../../common/Rating';
-import LeftQuoteIcon from '@/src/assets/icon/LeftQuoteIcon';
-import StyledText from '../../common/Text/StyledText';
+import type { UnitReviewProduct } from '@/src/types';
+import { ArtistName, Price, Rating, StyledText } from '@/src/components';
+import { LeftQuoteIcon } from '@/src/assets';
 
 const ReviewItem = ({ reviewItem }: { reviewItem: UnitReviewProduct }) => {
   const { artistName, productName, image, saleRate, price, reviewInfo, reviewRate, reviewCount } = reviewItem;

@@ -1,6 +1,5 @@
 import type { Product } from '@/src/types';
-import ProductInfo from '../common/ProductInfo';
-import ProductThumbImage from '../common/ProductThumbImage';
+import { ProductInfo, ProductThumbImage } from '@/src/components';
 
 const ProductItem = ({ item }: { item: Product }) => {
   return (

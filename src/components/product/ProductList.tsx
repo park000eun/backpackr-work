@@ -1,5 +1,5 @@
 import type { Product } from '@/src/types';
-import ProductItem from './ProductItem';
+import { ProductItem } from '@/src/components';
 
 const ProductList = ({ products }: { products: Product[] }) => {
   return (

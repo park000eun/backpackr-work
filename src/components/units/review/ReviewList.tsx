@@ -1,8 +1,8 @@
 import reviewData from '@/src/server/data/unit-review.json';
 import type { UnitReviewProduct, UnitReview } from '@/src/types';
-import ReviewItem from './ReviewItem';
-import ReviewIcon from '@/src/assets/icon/ReviewIcon';
-import StyledText from '../../common/Text/StyledText';
+
+import { ReviewItem, StyledText } from '@/src/components';
+import { ReviewIcon } from '@/src/assets';
 
 const ReviewList = () => {
   const { title, products } = reviewData as UnitReview;

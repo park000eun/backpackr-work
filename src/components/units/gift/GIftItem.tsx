@@ -2,7 +2,7 @@
 import Image from 'next/image';
 
 import type { UnitGiftItem } from '@/src/types';
-import Price from '../../common/Price';
+import { Price } from '@/src/components';
 
 const GiftItem = ({ handmadeItem }: { handmadeItem: UnitGiftItem }) => {
   const { thumbImageUrl, name, saleRate, priceSale } = handmadeItem;

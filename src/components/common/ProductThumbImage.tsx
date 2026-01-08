@@ -1,8 +1,8 @@
-import { TEXT_STYLES, type Promotion } from '@/src/types';
 import Image from 'next/image';
 
-import Badge from './Badge';
-import FavoriteToggle from './FavoriteToggle';
+import { TEXT_STYLES, type Promotion } from '@/src/types';
+import { Badge } from '@/src/components';
+// import FavoriteToggle from './FavoriteToggle';
 
 interface ProductThumbImageProps {
   src: string;
@@ -13,7 +13,14 @@ interface ProductThumbImageProps {
   promotion: Promotion;
 }
 
-const ProductThumbImage = ({ src, alt, uuid, width = 200, height = 200, promotion }: ProductThumbImageProps) => {
+const ProductThumbImage = ({
+  src,
+  alt,
+  // uuid,
+  width = 200,
+  height = 200,
+  promotion,
+}: ProductThumbImageProps) => {
   const promotionBadge = promotion.labels[0];
 
   return (

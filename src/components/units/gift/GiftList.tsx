@@ -2,9 +2,7 @@ import Image from 'next/image';
 
 import handmadeData from '@/src/server/data/unit-gift.json';
 import type { UnitGiftItem, UnitGift } from '@/src/types';
-
-import GiftItem from './GIftItem';
-import StyledText from '../../common/Text/StyledText';
+import { GiftItem, StyledText } from '@/src/components';
 
 const GiftList = () => {
   const { icon, title, themeTitle, items } = handmadeData as UnitGift;
