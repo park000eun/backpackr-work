@@ -1,10 +1,8 @@
-import Image from 'next/image';
-
 import reviewData from '@/src/server/data/unit-review.json';
 import type { TextStyleType, UnitReviewProduct } from '@/src/types';
 import { TEXT_STYLES } from '@/src/types';
 import ReviewItem from './ReviewItem';
-import ShortcutItem from '../shortcut/ShortcutItem';
+import ReviewIcon from '@/src/assets/icon/ReviewIcon';
 
 const ReviewList = () => {
   const { title, products } = reviewData;
@@ -12,6 +10,7 @@ const ReviewList = () => {
   return (
     <section className="mb-12 bg-[#F4F4FF] py-6 px-4 flex flex-col gap-4 items-start">
       <div className="flex gap-1 items-center">
+        <ReviewIcon />
         {title.map((ele) => (
           <span
             key={ele.text}
