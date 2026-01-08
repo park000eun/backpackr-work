@@ -5,6 +5,7 @@ import { TEXT_STYLES, type TextStyleType, type UnitReviewProduct } from '@/src/t
 import Price from '../../common/Price';
 import ArtistName from '../../common/Text/ArtistName';
 import Rating from '../../common/Rating';
+import LeftQuoteIcon from '@/src/assets/icon/LeftQuoteIcon';
 
 const ReviewItem = ({ reviewItem }: { reviewItem: UnitReviewProduct }) => {
   const { artistName, productName, image, saleRate, price, reviewInfo, reviewRate, reviewCount } = reviewItem;
@@ -30,13 +31,7 @@ const ReviewItem = ({ reviewItem }: { reviewItem: UnitReviewProduct }) => {
 
       <div className="bg-gray-100 rounded-sm flex-1 p-2 max-h-26 flex flex-col gap-1">
         <div className="relative line-clamp-3 text-start leading-[1.2]  ">
-          <img
-            src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none'%3E%3Cpath fill='%23999' d='M11.15 4 10 6q.825 0 1.412.588Q12 7.175 12 8t-.588 1.412A1.93 1.93 0 0 1 10 10q-.825 0-1.412-.588A1.93 1.93 0 0 1 8 8q0-.288.069-.531T8.275 7L10 4zm-5 0L5 6q.824 0 1.412.588Q7 7.175 7 8t-.588 1.412A1.93 1.93 0 0 1 5 10q-.824 0-1.412-.588A1.93 1.93 0 0 1 3 8q0-.288.069-.531.068-.244.206-.469L5 4z'/%3E%3C/svg%3E"
-            alt="quote"
-            width={16}
-            height={8}
-            className="float-left mr-0.5 mt-0.5"
-          />
+          <LeftQuoteIcon className="float-left mr-0.5 mt-0.5" />
           <div className="text-start">
             {reviewInfo.map((info, idx) => (
               <span
