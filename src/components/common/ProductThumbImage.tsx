@@ -38,7 +38,7 @@ const ProductThumbImage = ({ src, alt, width = 200, height = 200, promotion, lik
         </div>
       )}
 
-      <Image src={src} alt={alt} width={width} height={height} className="rounded w-full h-auto object-cover" />
+      <Image src={src} alt={alt} width={width} height={height} className="rounded w-full aspect-square object-cover" />
     </div>
   );
 };

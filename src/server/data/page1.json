@@ -15,17 +15,25 @@
         "contents": "구입한지 얼마되지 않았는데 벌써 절반이상 먹었습니다ㅎㅎ 제형이 생강물에 가까워서 생강차로 타먹었는데 이번 감기에 큰 도움이 됐어요. 집에 있는 모과차와 섞어 먹으니 적당히 달고 쌉쌀해서 생강을 즐기지 않는 가족도 잘 마시더라고요.",
         "starFull": true
       },
-      "badges": [],
+      "badges": [
+        {
+          "displayType": "RECTANGLE",
+          "label": "살수록할인",
+          "colorFont": "#5f77a4ff",
+          "colorBackground": "#f5f7ffff",
+          "image": null
+        },
+        {
+          "displayType": "RECTANGLE",
+          "label": "쿠폰",
+          "colorFont": "#ff4b50ff",
+          "colorBackground": "#fff2f4ff",
+          "image": null
+        }
+      ],
       "promotion": {
-        "colorBackground": "#009ee7ff",
-        "labels": [
-          {
-            "types": ["BOLD"],
-            "text": "설 특가",
-            "colorFont": "#fffce3ff",
-            "size": 11
-          }
-        ]
+        "colorBackground": "#00000099",
+        "labels": []
       },
       "isAdBadgeVisible": true,
       "artistId": 6148115
