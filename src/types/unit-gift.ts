@@ -1,4 +1,4 @@
-import { UnitTitle } from './common';
+import type { TextObject } from './common';
 
 export interface UnitGiftItem {
   uuid: string;
@@ -14,7 +14,7 @@ export interface UnitGift {
   id: string;
   icon: string;
   targetId: string;
-  title: UnitTitle[];
+  title: TextObject[];
   themeTitle: string;
-  items: UnitGiftProduct[];
+  items: UnitGiftItem[];
 }

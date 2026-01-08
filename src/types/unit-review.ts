@@ -1,14 +1,4 @@
-import { UnitTitle } from './common';
-
-export interface ReviewInfo {
-  text: string;
-  types: string[];
-  size: number;
-  color: string;
-  colorWeb: string;
-  bgColor: string | null;
-  bgColorWeb: string | null;
-}
+import type { TextObject } from './common';
 
 export interface UnitReviewProduct {
   uuid: string;
@@ -17,12 +7,12 @@ export interface UnitReviewProduct {
   artistName: string;
   saleRate: number;
   price: number;
-  reviewInfo: ReviewInfo[];
+  reviewInfo: TextObject[];
   reviewRate: number;
   reviewCount: number;
 }
 
 export interface UnitReview {
-  title: UnitTitle[];
+  title: TextObject[];
   products: UnitReviewProduct[];
 }

@@ -6,6 +6,7 @@ import Price from '../../common/Price';
 import ArtistName from '../../common/Text/ArtistName';
 import Rating from '../../common/Rating';
 import LeftQuoteIcon from '@/src/assets/icon/LeftQuoteIcon';
+import StyledText from '../../common/Text/StyledText';
 
 const ReviewItem = ({ reviewItem }: { reviewItem: UnitReviewProduct }) => {
   const { artistName, productName, image, saleRate, price, reviewInfo, reviewRate, reviewCount } = reviewItem;
@@ -33,19 +34,8 @@ const ReviewItem = ({ reviewItem }: { reviewItem: UnitReviewProduct }) => {
         <div className="relative line-clamp-3 text-start leading-[1.2]  ">
           <LeftQuoteIcon className="float-left mr-0.5 mt-0.5" />
           <div className="text-start">
-            {reviewInfo.map((info, idx) => (
-              <span
-                key={idx}
-                className="text-xs text-gray-600 inline"
-                style={{
-                  fontSize: `${info.size}px`,
-                  color: info.colorWeb,
-                  backgroundColor: info.bgColorWeb || undefined,
-                  ...TEXT_STYLES[info.types[0] as TextStyleType],
-                }}
-              >
-                {info.text}
-              </span>
+            {reviewInfo.map((info) => (
+              <StyledText key={info.text} textData={info} className="text-xs text-gray-600 inline" />
             ))}
           </div>
         </div>

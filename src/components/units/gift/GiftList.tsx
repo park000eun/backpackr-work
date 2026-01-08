@@ -1,34 +1,24 @@
 import Image from 'next/image';
 
 import handmadeData from '@/src/server/data/unit-gift.json';
-import type { TextStyleType, UnitGiftItem } from '@/src/types';
-
-import { TEXT_STYLES } from '@/src/types';
+import type { UnitGiftItem, UnitGift } from '@/src/types';
 
 import GiftItem from './GIftItem';
+import StyledText from '../../common/Text/StyledText';
 
 const GiftList = () => {
-  const { icon, title, themeTitle, items } = handmadeData;
+  const { icon, title, themeTitle, items } = handmadeData as UnitGift;
 
   return (
     <section className="mb-12 bg-[#EFFBED] py-6 px-4 flex flex-col gap-4 items-start">
       <div>
         <div className="flex gap-1 items-center">
           <Image src={icon} alt={themeTitle} width={24} height={24} />
-          {title.map((ele) => (
-            <span
-              key={ele.text}
-              style={{
-                fontSize: `${ele.size}px`,
-                color: ele.colorWeb,
-                backgroundColor: ele.bgColorWeb || undefined,
-                ...TEXT_STYLES[ele.types[0] as TextStyleType],
-              }}
-            >
-              {ele.text}
-            </span>
+          {title.map((textData) => (
+            <StyledText key={textData.text} textData={textData} />
           ))}
         </div>
+
         <h1 className="text-lg font-extrabold text-gray-700 pl-1">{themeTitle}</h1>
       </div>
 
