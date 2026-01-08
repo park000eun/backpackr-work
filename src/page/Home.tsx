@@ -1,38 +1,43 @@
 'use client';
-import { useRef, useCallback } from 'react';
-import { useFetchProductList } from '../store/useFetchProductList';
+import { useRef } from 'react';
 
-import ProductList from '../components/product/ProductList';
-import Loading from '../components/Loading';
+import { useFetchProductList } from '../store/useFetchProductList';
+import useSectionedData, { type DataSection } from '../hooks/useSectionedData';
 import useInfiniteScroll from '../hooks/useInfiniteScroll';
-import ShortcutList from '../components/units/shortcut/ShortcutList';
+
 import GiftList from '../components/units/gift/GiftList';
+import Loading from '../components/Loading';
+import ProductList from '../components/product/ProductList';
 import ReviewList from '../components/units/review/ReviewList';
+import ShortcutList from '../components/units/shortcut/ShortcutList';
 
 const Home = () => {
   const targetRef = useRef<HTMLDivElement>(null);
   const { data, fetchNextPage, hasNextPage, isFetchingNextPage } = useFetchProductList();
 
   const allProducts = data.pages.flatMap((page) => page.items); // page1 ~ 3.json > items flatMap
-
-  const handleScroll = useCallback(() => {
-    if (hasNextPage && !isFetchingNextPage) {
-      fetchNextPage();
-    }
-  }, [hasNextPage, isFetchingNextPage, fetchNextPage]);
+  const productSections = useSectionedData(allProducts);
 
   useInfiniteScroll({
     target: targetRef,
-    onScroll: handleScroll,
+    onScroll: () => {
+      if (hasNextPage && !isFetchingNextPage) {
+        fetchNextPage();
+      }
+    },
   });
 
   return (
     <div className="flex min-h-screen flex-col bg-white font-sans py-4">
       <main className="container mx-auto">
-        <ShortcutList />
-        <GiftList />
-        <ReviewList />
-        <ProductList products={allProducts} />
+        {productSections.map((section: DataSection, index: number) => (
+          <div key={index}>
+            <ProductList products={section.products} />
+            {section.showComponent === 'gift' && <GiftList />}
+            {section.showComponent === 'review' && <ReviewList />}
+            {section.showComponent === 'shortcut' && <ShortcutList />}
+          </div>
+        ))}
 
         {hasNextPage && (
           <div ref={targetRef} className="flex justify-center">

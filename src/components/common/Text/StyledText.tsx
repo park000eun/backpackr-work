@@ -7,6 +7,7 @@ interface StyledTextProps {
 
 const StyledText = ({ className, textData }: StyledTextProps) => {
   const { size, colorWeb, bgColorWeb, types, text } = textData;
+
   return (
     <span
       className={className}
