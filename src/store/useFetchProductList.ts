@@ -3,7 +3,7 @@ import { useSuspenseInfiniteQuery } from '@tanstack/react-query';
 import type { ProductListResponse } from '../types';
 import { fetchProductList } from '../server/data/api';
 
-export const useFetchProductList = () => {
+const useFetchProductList = () => {
   return useSuspenseInfiniteQuery<ProductListResponse, Error>({
     queryKey: ['products', 'infinite'],
     queryFn: ({ pageParam = 1 }) => fetchProductList(pageParam as number),
@@ -14,3 +14,5 @@ export const useFetchProductList = () => {
     initialPageParam: 1,
   });
 };
+
+export default useFetchProductList;

@@ -2,7 +2,7 @@
 import Image from 'next/image';
 
 import type { UnitReviewProduct } from '@/src/types';
-import { ArtistName, Price, Rating, StyledText } from '@/src/components';
+import { ArtistName, Price, ProductName, Rating, StyledText } from '@/src/components';
 import { LeftQuoteIcon } from '@/src/assets';
 
 const ReviewItem = ({ reviewItem }: { reviewItem: UnitReviewProduct }) => {
@@ -22,7 +22,7 @@ const ReviewItem = ({ reviewItem }: { reviewItem: UnitReviewProduct }) => {
         />
         <div className="flex flex-col  flex-1 justify-center ml-1.5">
           <ArtistName artistName={artistName} />
-          <span className="text-sm text-gray-600 line-clamp-2 my-1 text-start">{productName}</span>
+          <ProductName name={productName} size="sm" />
           <Price discountRate={saleRate} salePrice={price} />
         </div>
       </div>

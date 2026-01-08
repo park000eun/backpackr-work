@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 import type { Badge as BadgeType, Review } from '@/src/types';
 import { AdIcon } from '@/src/assets';
-import { ArtistName, Badge, Price, Rating } from '@/src/components';
+import { ArtistName, Badge, Price, ProductName, Rating } from '@/src/components';
 
 interface ProductInfoProps {
   isAdBadge: boolean;
@@ -24,7 +24,7 @@ const ProductInfo = ({ isAdBadge, name, badges, artistName, salePrice, discountR
       </div>
 
       {/* 제품명, 가격 */}
-      <h3 className="line-clamp-2">{name}</h3>
+      <ProductName name={name} />
       <Price discountRate={discountRate} salePrice={salePrice} />
 
       {/* 프로모션 뱃지 */}

@@ -1,15 +1,11 @@
 'use client';
 import { useRef } from 'react';
+import { useFetchProductList } from '@/src/store';
+import { useInfiniteScroll, useSectionedData } from '@/src/hooks';
 
-import { useFetchProductList } from '../store/useFetchProductList';
-import useSectionedData, { type DataSection } from '../hooks/useSectionedData';
-import useInfiniteScroll from '../hooks/useInfiniteScroll';
+import { ProductList, GiftList, ReviewList, ShortcutList, Loading } from '@/src/components';
 
-import GiftList from '../components/units/gift/GiftList';
-import Loading from '../components/Loading';
-import ProductList from '../components/product/ProductList';
-import ReviewList from '../components/units/review/ReviewList';
-import ShortcutList from '../components/units/shortcut/ShortcutList';
+type DataSection = ReturnType<typeof useSectionedData>[number];
 
 const Home = () => {
   const targetRef = useRef<HTMLDivElement>(null);

@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 import handmadeData from '@/src/server/data/unit-gift.json';
 import type { UnitGiftItem, UnitGift } from '@/src/types';
-import { GiftItem, StyledText } from '@/src/components';
+import { GiftItem, SectionTitle, StyledText } from '@/src/components';
 
 const GiftList = () => {
   const { icon, title, themeTitle, items } = handmadeData as UnitGift;
@@ -17,7 +17,7 @@ const GiftList = () => {
           ))}
         </div>
 
-        <h1 className="text-lg font-extrabold text-gray-700 pl-1">{themeTitle}</h1>
+        <SectionTitle title={themeTitle} />
       </div>
 
       <div className="grid gap-x-3 gap-y-4 grid-cols-3">

@@ -6,6 +6,8 @@ export { default as Price } from './common/Price';
 export { default as Rating } from './common/Rating';
 export { default as StyledText } from './common/Text/StyledText';
 export { default as ArtistName } from './common/Text/ArtistName';
+export { default as ProductName } from './common/Text/ProductName';
+export { default as SectionTitle } from './common/Text/SectionTitle';
 
 // common > Product
 export { default as ProductInfo } from './common/ProductInfo';

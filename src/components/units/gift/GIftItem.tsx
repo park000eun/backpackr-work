@@ -2,7 +2,7 @@
 import Image from 'next/image';
 
 import type { UnitGiftItem } from '@/src/types';
-import { Price } from '@/src/components';
+import { Price, ProductName } from '@/src/components';
 
 const GiftItem = ({ handmadeItem }: { handmadeItem: UnitGiftItem }) => {
   const { thumbImageUrl, name, saleRate, priceSale } = handmadeItem;
@@ -15,7 +15,7 @@ const GiftItem = ({ handmadeItem }: { handmadeItem: UnitGiftItem }) => {
         height={72}
         className="rounded-2xl w-full aspect-square object-cover"
       />
-      <span className="text-sm text-gray-600 line-clamp-2 mt-2 text-start">{name}</span>
+      <ProductName name={name} size="sm" />
       <Price discountRate={saleRate} salePrice={priceSale} />
     </button>
   );
