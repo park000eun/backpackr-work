@@ -9,7 +9,7 @@ export const BADGE_DISPLAY_TYPES = {
 } as const;
 export type BadgeDisplayType = keyof typeof BADGE_DISPLAY_TYPES;
 
-export interface UnitTitle {
+export interface TextObject {
   text: string;
   types: TextStyleType[];
   size: number;

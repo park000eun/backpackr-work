@@ -1,3 +1,5 @@
+import type { Product } from './page';
+
 export interface UnitShortcutItem {
   id: number;
   imageUrl: string;
@@ -7,5 +9,5 @@ export interface UnitShortcutItem {
 
 export interface UnitShortcut {
   title: string;
-  items: UnitShortcutItem[];
+  items: Product[];
 }

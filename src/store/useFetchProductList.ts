@@ -1,0 +1,18 @@
+import { useSuspenseInfiniteQuery } from '@tanstack/react-query';
+
+import type { ProductListResponse } from '../types';
+import { fetchProductList } from '../server/data/api';
+
+const useFetchProductList = () => {
+  return useSuspenseInfiniteQuery<ProductListResponse, Error>({
+    queryKey: ['products', 'infinite'],
+    queryFn: ({ pageParam = 1 }) => fetchProductList(pageParam as number),
+    getNextPageParam: (lastPage) => {
+      const { current, total } = lastPage.pagination;
+      return current < total ? current + 1 : undefined;
+    },
+    initialPageParam: 1,
+  });
+};
+
+export default useFetchProductList;

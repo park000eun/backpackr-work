@@ -1,11 +1,9 @@
 'use client';
 import Image from 'next/image';
 
-import { TEXT_STYLES, type TextStyleType, type UnitReviewProduct } from '@/src/types';
-import Price from '../../common/Price';
-import ArtistName from '../../common/Text/ArtistName';
-import Rating from '../../common/Rating';
-import LeftQuoteIcon from '@/src/assets/icon/LeftQuoteIcon';
+import type { UnitReviewProduct } from '@/src/types';
+import { ArtistName, Price, ProductName, Rating, StyledText } from '@/src/components';
+import { LeftQuoteIcon } from '@/src/assets';
 
 const ReviewItem = ({ reviewItem }: { reviewItem: UnitReviewProduct }) => {
   const { artistName, productName, image, saleRate, price, reviewInfo, reviewRate, reviewCount } = reviewItem;
@@ -24,7 +22,7 @@ const ReviewItem = ({ reviewItem }: { reviewItem: UnitReviewProduct }) => {
         />
         <div className="flex flex-col  flex-1 justify-center ml-1.5">
           <ArtistName artistName={artistName} />
-          <span className="text-sm text-gray-600 line-clamp-2 my-1 text-start">{productName}</span>
+          <ProductName name={productName} size="sm" />
           <Price discountRate={saleRate} salePrice={price} />
         </div>
       </div>
@@ -33,19 +31,8 @@ const ReviewItem = ({ reviewItem }: { reviewItem: UnitReviewProduct }) => {
         <div className="relative line-clamp-3 text-start leading-[1.2]  ">
           <LeftQuoteIcon className="float-left mr-0.5 mt-0.5" />
           <div className="text-start">
-            {reviewInfo.map((info, idx) => (
-              <span
-                key={idx}
-                className="text-xs text-gray-600 inline"
-                style={{
-                  fontSize: `${info.size}px`,
-                  color: info.colorWeb,
-                  backgroundColor: info.bgColorWeb || undefined,
-                  ...TEXT_STYLES[info.types[0] as TextStyleType],
-                }}
-              >
-                {info.text}
-              </span>
+            {reviewInfo.map((info) => (
+              <StyledText key={info.text} textData={info} className="text-xs text-gray-600 inline" />
             ))}
           </div>
         </div>
